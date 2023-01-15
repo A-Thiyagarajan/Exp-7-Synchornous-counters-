@@ -1,8 +1,13 @@
 # Exp-6-Synchornous-counters - up counter and down counter 
-### AIM: To implement 4 bit up and down counters and validate  functionality.
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
-### THEORY 
+## AIM: 
+REF NO: 22008681 Name: A.Thiyagarajan
+
+To implement 4 bit up and down counters and validate  functionality.
+## HARDWARE REQUIRED:  
+PC, Cyclone II , USB flasher
+## SOFTWARE REQUIRED:  
+Quartus prime
+## THEORY 
 
 ## UP COUNTER 
 The counter is a digital sequential circuit and here it is a 4 bit counter, which simply means it can count from 0 to 15 and vice versa based upon the direction of counting (up/down). 
@@ -45,44 +50,89 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 
 4-bit Count Down Counter
-### Procedure
-/* write all the steps invloved */
+## Procedure
+1.Create module projectname(input ,output) to start the verilog programming. 
+2.create a if loop condition to increase the count in counter_up function. 
+3.Similarly, create another loop for the down counter.
+4.End the verilog program using keyword endmodule. 
+5.Get the timing diagram and RTL realization diagram for respective Counters.
 
 
 
-### PROGRAM 
-/*
+## PROGRAM 
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: A.Thiyagarajan
+Register Number:  22008681
+
+
+UP COUNTER
+
+module upcount(clock,reset,up);
+input clock,reset;
+output reg[0:2] up;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+up=3'b 000;
+else
+up=up+1;
+end
+endmodule
+
+
+DOWN COUNTER
+
+module downcount(clock,reset,down);
+input clock,reset;
+output reg[2:0] down;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+down=3'b 111;
+else
+down=down-1;
+end
+endmodule
+
+```
 
 
 
 
+## RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
-
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
-
-
-
-
+### Up Counter
+![up counter](https://user-images.githubusercontent.com/118707693/212560263-d12c10be-8a29-4d4b-8ea6-1735de5f4db6.png)
 
 
 
+### Down Counter
+
+![down counter](https://user-images.githubusercontent.com/118707693/212560273-b867e65c-39cc-4a50-aace-0372463cca62.png)
 
 
-### TIMING DIGRAMS FOR COUNTER  
+## TIMING DIGRAMS FOR COUNTER  
+
+### Up Counter
+![up counter td](https://user-images.githubusercontent.com/118707693/212560287-fec4ac61-3b6b-4654-9ee3-f23824abbbf4.png)
 
 
+### Down Counter
+
+![down counter td](https://user-images.githubusercontent.com/118707693/212560294-aa4cf631-8226-49d6-b671-0022384994f1.png)
 
 
+## TRUTH TABLE 
 
-### TRUTH TABLE 
+### Up Counter
+
+![up counter truth table](https://user-images.githubusercontent.com/118707693/212560303-90f15adb-b51f-4f97-8ba3-1ce1f177ea17.png)
+
+### Down Counter
+
+![down counter truth table](https://user-images.githubusercontent.com/118707693/212560315-12707cf8-7b14-4a78-8d4b-bdb58dc581f5.png)
 
 
-
-
-
-
-### RESULTS 
+## RESULTS 
+Thus 3 bit up and down counters is implemented and its functionality is validated.
